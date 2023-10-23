@@ -60,3 +60,17 @@ plt.savefig('equipos_por_tipo.png')
 ubicacion_con_mas_equipos = df['ubicacion'].value_counts().idxmax()
 print(f'Ubicación con más equipos: {ubicacion_con_mas_equipos}')
 #Se identifica la ubicación con la mayor concentración de equipos y se muestra en la salida.
+
+#4  ¿Cuál es la distribución de los equipos por municipio en la provincia de Pontevedra?
+
+# Contar la cantidad de equipos por provincia
+equipos_por_provincia = df['provincia'].value_counts()
+
+# Graficar la distribución de equipos por provincia
+plt.figure(figsize=(10, 6))
+equipos_por_provincia.plot(kind='bar',color='#5e60ce')
+plt.xlabel('Provincia')
+plt.ylabel('Cantidad de Equipos')
+plt.title('Distribución de Equipos por Provincia')
+plt.xticks(rotation=45)
+plt.savefig('equipos_por_provincia.png')
